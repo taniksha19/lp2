@@ -1,0 +1,20 @@
+public class Calculator {
+	
+    public void add(Integer x,Integer y){
+        integer sum = x+y;
+        system.debug('Sum is:'+ (x+y));
+    }
+    public void Subtract(integer x,integer y){
+         integer diff = x-y;
+		 system.debug('Original Difference'+diff);
+    }   
+        
+    public void Multiply(integer x,integer y){
+        integer product = x*y;
+        system.debug('Product is: '+product);
+    }
+    public void Division(integer x,integer y){
+        integer quotient = x/y;
+        system.debug('Quotient is: '+quotient);
+    }
+}

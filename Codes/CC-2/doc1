@@ -1,0 +1,710 @@
+tudent@student-OptiPlex-3020:~/google-cloud-cli-418.0.0-linux-x86_64/google-cloud-sdk/bin$ dev_appserver.py "home/student/assign7"
+/usr/bin/env: ‘python’: No such file or directory
+student@student-OptiPlex-3020:~/google-cloud-cli-418.0.0-linux-x86_64/google-cloud-sdk/bin$ python3 dev_appserver.py "home/student/assign7"
+This action requires the installation of components: [app-engine-
+python, cloud-datastore-emulator]
+Traceback (most recent call last):
+  File "/home/student/google-cloud-cli-418.0.0-linux-x86_64/google-cloud-sdk/lib/third_party/urllib3/connection.py", line 174, in _new_conn
+    conn = connection.create_connection(
+  File "/home/student/google-cloud-cli-418.0.0-linux-x86_64/google-cloud-sdk/lib/third_party/urllib3/util/connection.py", line 72, in create_connection
+    for res in socket.getaddrinfo(host, port, family, socket.SOCK_STREAM):
+  File "/usr/lib/python3.8/socket.py", line 918, in getaddrinfo
+    for res in _socket.getaddrinfo(host, port, family, type, proto, flags):
+socket.gaierror: [Errno -2] Name or service not known
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/student/google-cloud-cli-418.0.0-linux-x86_64/google-cloud-sdk/lib/third_party/urllib3/connectionpool.py", line 703, in urlopen
+    httplib_response = self._make_request(
+  File "/home/student/google-cloud-cli-418.0.0-linux-x86_64/google-cloud-sdk/lib/third_party/urllib3/connectionpool.py", line 386, in _make_request
+    self._validate_conn(conn)
+  File "/home/student/google-cloud-cli-418.0.0-linux-x86_64/google-cloud-sdk/lib/third_party/urllib3/connectionpool.py", line 1040, in _validate_conn
+    conn.connect()
+  File "/home/student/google-cloud-cli-418.0.0-linux-x86_64/google-cloud-sdk/lib/third_party/urllib3/connection.py", line 358, in connect
+    self.sock = conn = self._new_conn()
+  File "/home/student/google-cloud-cli-418.0.0-linux-x86_64/google-cloud-sdk/lib/third_party/urllib3/connection.py", line 186, in _new_conn
+    raise NewConnectionError(
+urllib3.exceptions.NewConnectionError: <urllib3.connection.HTTPSConnection object at 0x7f325acf8370>: Failed to establish a new connection: [Errno -2] Name or service not known
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/student/google-cloud-cli-418.0.0-linux-x86_64/google-cloud-sdk/lib/third_party/requests/adapters.py", line 439, in send
+    resp = conn.urlopen(
+  File "/home/student/google-cloud-cli-418.0.0-linux-x86_64/google-cloud-sdk/lib/third_party/urllib3/connectionpool.py", line 785, in urlopen
+    retries = retries.increment(
+  File "/home/student/google-cloud-cli-418.0.0-linux-x86_64/google-cloud-sdk/lib/third_party/urllib3/util/retry.py", line 592, in increment
+    raise MaxRetryError(_pool, url, error or ResponseError(cause))
+urllib3.exceptions.MaxRetryError: HTTPSConnectionPool(host='dl.google.com', port=443): Max retries exceeded with url: /dl/cloudsdk/channels/rapid/components-v418.0.0.json (Caused by NewConnectionError('<urllib3.connection.HTTPSConnection object at 0x7f325acf8370>: Failed to establish a new connection: [Errno -2] Name or service not known'))
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "dev_appserver.py", line 84, in <module>
+    exceptions.HandleError(e, 'dev_appserver')
+  File "/home/student/google-cloud-cli-418.0.0-linux-x86_64/google-cloud-sdk/lib/googlecloudsdk/calliope/exceptions.py", line 555, in HandleError
+    core_exceptions.reraise(exc)
+  File "/home/student/google-cloud-cli-418.0.0-linux-x86_64/google-cloud-sdk/lib/googlecloudsdk/core/exceptions.py", line 146, in reraise
+    six.reraise(type(exc_value), exc_value, tb)
+  File "/home/student/google-cloud-cli-418.0.0-linux-x86_64/google-cloud-sdk/lib/third_party/six/__init__.py", line 719, in reraise
+    raise value
+  File "dev_appserver.py", line 82, in <module>
+    main()
+  File "dev_appserver.py", line 36, in main
+    update_manager.UpdateManager.EnsureInstalledAndRestart(
+  File "/home/student/google-cloud-cli-418.0.0-linux-x86_64/google-cloud-sdk/lib/googlecloudsdk/core/updater/update_manager.py", line 262, in EnsureInstalledAndRestart
+    return manager._EnsureInstalledAndRestart(components, msg, command)
+  File "/home/student/google-cloud-cli-418.0.0-linux-x86_64/google-cloud-sdk/lib/googlecloudsdk/core/updater/update_manager.py", line 1541, in _EnsureInstalledAndRestart
+    if not self.Install(components, throw_if_unattended=True,
+  File "/home/student/google-cloud-cli-418.0.0-linux-x86_64/google-cloud-sdk/lib/googlecloudsdk/core/updater/update_manager.py", line 947, in Install
+    return self.Update(
+  File "/home/student/google-cloud-cli-418.0.0-linux-x86_64/google-cloud-sdk/lib/googlecloudsdk/core/updater/update_manager.py", line 989, in Update
+    install_state, diff = self._GetStateAndDiff(
+  File "/home/student/google-cloud-cli-418.0.0-linux-x86_64/google-cloud-sdk/lib/googlecloudsdk/core/updater/update_manager.py", line 692, in _GetStateAndDiff
+    latest_snapshot = self._GetLatestSnapshot(version=version,
+  File "/home/student/google-cloud-cli-418.0.0-linux-x86_64/google-cloud-sdk/lib/googlecloudsdk/core/updater/update_manager.py", line 675, in _GetLatestSnapshot
+    return snapshots.ComponentSnapshot.FromURLs(
+  File "/home/student/google-cloud-cli-418.0.0-linux-x86_64/google-cloud-sdk/lib/googlecloudsdk/core/updater/snapshots.py", line 175, in FromURLs
+    data = [
+  File "/home/student/google-cloud-cli-418.0.0-linux-x86_64/google-cloud-sdk/lib/googlecloudsdk/core/updater/snapshots.py", line 176, in <listcomp>
+    (ComponentSnapshot._DictFromURL(
+  File "/home/student/google-cloud-cli-418.0.0-linux-x86_64/google-cloud-sdk/lib/googlecloudsdk/core/updater/snapshots.py", line 200, in _DictFromURL
+    response = installers.MakeRequest(url, command_path)
+  File "/home/student/google-cloud-cli-418.0.0-linux-x86_64/google-cloud-sdk/lib/googlecloudsdk/core/updater/installers.py", line 114, in MakeRequest
+    return _RawRequest(url, headers=headers, timeout=timeout)
+  File "/home/student/google-cloud-cli-418.0.0-linux-x86_64/google-cloud-sdk/lib/googlecloudsdk/core/updater/installers.py", line 162, in _RawRequest
+    return retryer.RetryOnException(
+  File "/home/student/google-cloud-cli-418.0.0-linux-x86_64/google-cloud-sdk/lib/googlecloudsdk/core/util/retry.py", line 201, in RetryOnException
+    exceptions.reraise(exc_info[1], tb=exc_info[2])
+  File "/home/student/google-cloud-cli-418.0.0-linux-x86_64/google-cloud-sdk/lib/googlecloudsdk/core/exceptions.py", line 146, in reraise
+    six.reraise(type(exc_value), exc_value, tb)
+  File "/home/student/google-cloud-cli-418.0.0-linux-x86_64/google-cloud-sdk/lib/third_party/six/__init__.py", line 719, in reraise
+    raise value
+  File "/home/student/google-cloud-cli-418.0.0-linux-x86_64/google-cloud-sdk/lib/googlecloudsdk/core/util/retry.py", line 182, in TryFunc
+    return func(*args, **kwargs), None
+  File "/home/student/google-cloud-cli-418.0.0-linux-x86_64/google-cloud-sdk/lib/googlecloudsdk/core/updater/installers.py", line 192, in _ExecuteRequestAndRaiseExceptions
+    response = requests_session.get(
+  File "/home/student/google-cloud-cli-418.0.0-linux-x86_64/google-cloud-sdk/lib/third_party/requests/sessions.py", line 555, in get
+    return self.request('GET', url, **kwargs)
+  File "/home/student/google-cloud-cli-418.0.0-linux-x86_64/google-cloud-sdk/lib/googlecloudsdk/core/transport.py", line 260, in WrappedRequest
+    response = orig_request(*modified_args, **modified_kwargs)
+  File "/home/student/google-cloud-cli-418.0.0-linux-x86_64/google-cloud-sdk/lib/googlecloudsdk/core/requests.py", line 246, in WrappedRequest
+    return orig_request_method(*args, **kwargs)
+  File "/home/student/google-cloud-cli-418.0.0-linux-x86_64/google-cloud-sdk/lib/third_party/requests/sessions.py", line 542, in request
+    resp = self.send(prep, **send_kwargs)
+  File "/home/student/google-cloud-cli-418.0.0-linux-x86_64/google-cloud-sdk/lib/third_party/requests/sessions.py", line 655, in send
+    r = adapter.send(request, **kwargs)
+  File "/home/student/google-cloud-cli-418.0.0-linux-x86_64/google-cloud-sdk/lib/third_party/requests/adapters.py", line 516, in send
+    raise ConnectionError(e, request=request)
+requests.exceptions.ConnectionError: HTTPSConnectionPool(host='dl.google.com', port=443): Max retries exceeded with url: /dl/cloudsdk/channels/rapid/components-v418.0.0.json (Caused by NewConnectionError('<urllib3.connection.HTTPSConnection object at 0x7f325acf8370>: Failed to establish a new connection: [Errno -2] Name or service not known'))
+student@student-OptiPlex-3020:~/google-cloud-cli-418.0.0-linux-x86_64/google-cloud-sdk/bin$ gcloud init
+Welcome! This command will take you through the configuration of gcloud.
+
+Settings from your current configuration [assignment-test] are:
+core:
+  account: adityakulkarni819@gmail.com
+  disable_usage_reporting: 'False'
+  project: adikul-test
+
+Pick configuration to use:
+ [1] Re-initialize this configuration [assignment-test] with new settings 
+ [2] Create a new configuration
+ [3] Switch to and re-initialize existing configuration: [default]
+Please enter your numeric choice:  1
+
+Your current configuration has been set to: [assignment-test]
+
+You can skip diagnostics next time by using the following flag:
+  gcloud init --skip-diagnostics
+
+Network diagnostic detects and fixes local network connection issues.
+Checking network connection...done.                                            
+ERROR: Reachability Check failed.
+    httplib2 cannot reach https://accounts.google.com:
+Unable to find the server at accounts.google.com
+
+    httplib2 cannot reach https://cloudresourcemanager.googleapis.com/v1beta1/projects:
+Unable to find the server at cloudresourcemanager.googleapis.com
+
+Network connection problems may be due to proxy or firewall settings.
+
+
+Do you have a network proxy you would like to set in gcloud (Y/n)?  n
+
+ERROR: Network diagnostic failed (0/1 checks passed).
+
+Network errors detected.
+
+Would you like to continue anyway (y/N)?  n
+
+You can re-run diagnostics with the following command:
+  gcloud info --run-diagnostics
+
+student@student-OptiPlex-3020:~/google-cloud-cli-418.0.0-linux-x86_64/google-cloud-sdk/bin$ gcloud init
+Welcome! This command will take you through the configuration of gcloud.
+
+Settings from your current configuration [assignment-test] are:
+
+
+core:
+  disable_usage_reporting: 'False'
+
+Pick configuration to use:
+ [1] Re-initialize this configuration [assignment-test] with new settings 
+ [2] Create a new configuration
+ [3] Switch to and re-initialize existing configuration: [default]
+Please enter your numeric choice:  Please enter a value between 1 and 3:  Please enter a value between 1 and 3:  1
+
+Your current configuration has been set to: [assignment-test]
+
+You can skip diagnostics next time by using the following flag:
+  gcloud init --skip-diagnostics
+
+Network diagnostic detects and fixes local network connection issues.
+Checking network connection...done.                                            
+ERROR: Reachability Check failed.
+    httplib2 cannot reach https://accounts.google.com:
+Unable to find the server at accounts.google.com
+
+Network connection problems may be due to proxy or firewall settings.
+
+
+Do you have a network proxy you would like to set in gcloud (Y/n)?  n
+
+ERROR: Network diagnostic failed (0/1 checks passed).
+
+Network errors detected.
+
+Would you like to continue anyway (y/N)?  Y
+
+Choose the account you would like to use to perform operations for this 
+configuration:
+ [1] adityakulkarni819@gmail.com
+ [2] Log in with a new account
+Please enter your numeric choice:  1
+
+You are logged in as: [adityakulkarni819@gmail.com].
+
+Pick cloud project to use: 
+ [1] adikul-test
+ [2] meet-clone-29748
+ [3] Enter a project ID
+ [4] Create a new project
+Please enter numeric choice or text value (must exactly match list item):  1
+
+Your current project has been set to: [adikul-test].
+
+Not setting default zone/region (this feature makes it easier to use
+[gcloud compute] by setting an appropriate default value for the
+--zone and --region flag).
+See https://cloud.google.com/compute/docs/gcloud-compute section on how to set
+default compute region and zone manually. If you would like [gcloud init] to be
+able to do this for you the next time you run it, make sure the
+Compute Engine API is enabled for your project on the
+https://console.developers.google.com/apis page.
+
+Your Google Cloud SDK is configured and ready to use!
+
+* Commands that require authentication will use adityakulkarni819@gmail.com by default
+* Commands will reference project `adikul-test` by default
+Run `gcloud help config` to learn how to change individual settings
+
+This gcloud configuration is called [assignment-test]. You can create additional configurations if you work with multiple accounts and/or projects.
+Run `gcloud topic configurations` to learn more.
+
+Some things to try next:
+
+* Run `gcloud --help` to see the Cloud Platform services you can interact with. And run `gcloud help COMMAND` to get help on any gcloud command.
+* Run `gcloud topic --help` to learn about advanced features of the SDK like arg files and output formatting
+* Run `gcloud cheat-sheet` to see a roster of go-to `gcloud` commands.
+student@student-OptiPlex-3020:~/google-cloud-cli-418.0.0-linux-x86_64/google-cloud-sdk/bin$ python3 dev_appserver.py "home/student/assign7"
+This action requires the installation of components: [app-engine-
+python, cloud-datastore-emulator]
+
+
+Your current Google Cloud CLI version is: 418.0.0
+Installing components from version: 418.0.0
+
+ERROR: (dev_appserver) Your current working directory is inside the Google Cloud CLI install root: /home/student/google-cloud-cli-418.0.0-linux-x86_64/google-cloud-sdk.  In order to perform this update, run the command from outside of this directory.
+student@student-OptiPlex-3020:~/google-cloud-cli-418.0.0-linux-x86_64/google-cloud-sdk/bin$ cd..
+cd..: command not found
+student@student-OptiPlex-3020:~/google-cloud-cli-418.0.0-linux-x86_64/google-cloud-sdk/bin$ cd
+student@student-OptiPlex-3020:~$ cd home
+bash: cd: home: No such file or directory
+student@student-OptiPlex-3020:~$ cd /home
+student@student-OptiPlex-3020:/home$ python3 /home/student/google-cloud-cli-418.0.0-linux-x86_64/google-cloud-sdk/bin/dev_appserver.py "home/student/assign7" 
+This action requires the installation of components: [app-engine-
+python, cloud-datastore-emulator]
+
+
+Your current Google Cloud CLI version is: 418.0.0
+Installing components from version: 418.0.0
+
+┌───────────────────────────────────────────────────┐
+│        These components will be installed.        │
+├──────────────────────────────┬─────────┬──────────┤
+│             Name             │ Version │   Size   │
+├──────────────────────────────┼─────────┼──────────┤
+│ Cloud Datastore Emulator     │   2.3.0 │ 35.1 MiB │
+│ gRPC Python library          │  1.20.0 │  2.1 MiB │
+│ gcloud app Python Extensions │ 1.9.101 │  8.6 MiB │
+└──────────────────────────────┴─────────┴──────────┘
+
+For the latest full release notes, please visit:
+  https://cloud.google.com/sdk/release_notes
+
+Do you want to continue (Y/n)?  y
+
+╔════════════════════════════════════════════════════════════╗
+╠═ Creating update staging area                             ═╣
+╠════════════════════════════════════════════════════════════╣
+╠═ Installing: Cloud Datastore Emulator                     ═╣
+╠════════════════════════════════════════════════════════════╣
+╠═ Installing: gRPC Python library                          ═╣
+╠════════════════════════════════════════════════════════════╣
+╠═ Installing: gRPC Python library                          ═╣
+╠════════════════════════════════════════════════════════════╣
+╠═ Installing: gcloud app Python Extensions                 ═╣
+╠════════════════════════════════════════════════════════════╣
+╠═ Creating backup and activating new installation          ═╣
+╚════════════════════════════════════════════════════════════╝
+
+Performing post processing steps...done.                                       
+
+Update done!
+
+Restarting command:
+  $ dev_appserver.py home/student/assign7
+
+Traceback (most recent call last):
+  File "/home/student/google-cloud-cli-418.0.0-linux-x86_64/google-cloud-sdk/platform/google_appengine/dev_appserver.py", line 109, in <module>
+    _run_file(__file__, globals())
+  File "/home/student/google-cloud-cli-418.0.0-linux-x86_64/google-cloud-sdk/platform/google_appengine/dev_appserver.py", line 103, in _run_file
+    _execfile(_PATHS.script_file(script_name), globals_)
+  File "/home/student/google-cloud-cli-418.0.0-linux-x86_64/google-cloud-sdk/platform/google_appengine/dev_appserver.py", line 83, in _execfile
+    execfile(fn, scope)
+  File "/home/student/google-cloud-cli-418.0.0-linux-x86_64/google-cloud-sdk/platform/google_appengine/google/appengine/tools/devappserver2/devappserver2.py", line 645, in <module>
+    main()
+  File "/home/student/google-cloud-cli-418.0.0-linux-x86_64/google-cloud-sdk/platform/google_appengine/google/appengine/tools/devappserver2/devappserver2.py", line 633, in main
+    dev_server.start(options)
+  File "/home/student/google-cloud-cli-418.0.0-linux-x86_64/google-cloud-sdk/platform/google_appengine/google/appengine/tools/devappserver2/devappserver2.py", line 306, in start
+    env_variables=parsed_env_variables)
+  File "/home/student/google-cloud-cli-418.0.0-linux-x86_64/google-cloud-sdk/platform/google_appengine/google/appengine/tools/devappserver2/application_configuration.py", line 965, in __init__
+    env_variables)
+  File "/home/student/google-cloud-cli-418.0.0-linux-x86_64/google-cloud-sdk/platform/google_appengine/google/appengine/tools/devappserver2/application_configuration.py", line 155, in __init__
+    self._config_path)
+  File "/home/student/google-cloud-cli-418.0.0-linux-x86_64/google-cloud-sdk/platform/google_appengine/google/appengine/tools/devappserver2/application_configuration.py", line 517, in _parse_configuration
+    with open(configuration_path) as f:
+IOError: [Errno 2] No such file or directory: 'home/student/assign7'
+student@student-OptiPlex-3020:/home$ python3 /home/student/google-cloud-cli-418.0.0-linux-x86_64/google-cloud-sdk/bin/dev_appserver.py "/home/student/assign7" 
+Traceback (most recent call last):
+  File "/home/student/google-cloud-cli-418.0.0-linux-x86_64/google-cloud-sdk/platform/google_appengine/dev_appserver.py", line 109, in <module>
+    _run_file(__file__, globals())
+  File "/home/student/google-cloud-cli-418.0.0-linux-x86_64/google-cloud-sdk/platform/google_appengine/dev_appserver.py", line 103, in _run_file
+    _execfile(_PATHS.script_file(script_name), globals_)
+  File "/home/student/google-cloud-cli-418.0.0-linux-x86_64/google-cloud-sdk/platform/google_appengine/dev_appserver.py", line 83, in _execfile
+    execfile(fn, scope)
+  File "/home/student/google-cloud-cli-418.0.0-linux-x86_64/google-cloud-sdk/platform/google_appengine/google/appengine/tools/devappserver2/devappserver2.py", line 645, in <module>
+    main()
+  File "/home/student/google-cloud-cli-418.0.0-linux-x86_64/google-cloud-sdk/platform/google_appengine/google/appengine/tools/devappserver2/devappserver2.py", line 633, in main
+    dev_server.start(options)
+  File "/home/student/google-cloud-cli-418.0.0-linux-x86_64/google-cloud-sdk/platform/google_appengine/google/appengine/tools/devappserver2/devappserver2.py", line 306, in start
+    env_variables=parsed_env_variables)
+  File "/home/student/google-cloud-cli-418.0.0-linux-x86_64/google-cloud-sdk/platform/google_appengine/google/appengine/tools/devappserver2/application_configuration.py", line 965, in __init__
+    env_variables)
+  File "/home/student/google-cloud-cli-418.0.0-linux-x86_64/google-cloud-sdk/platform/google_appengine/google/appengine/tools/devappserver2/application_configuration.py", line 155, in __init__
+    self._config_path)
+  File "/home/student/google-cloud-cli-418.0.0-linux-x86_64/google-cloud-sdk/platform/google_appengine/google/appengine/tools/devappserver2/application_configuration.py", line 518, in _parse_configuration
+    config, files = appinfo_includes.ParseAndReturnIncludePaths(f)
+  File "/home/student/google-cloud-cli-418.0.0-linux-x86_64/google-cloud-sdk/platform/google_appengine/google/appengine/api/appinfo_includes.py", line 82, in ParseAndReturnIncludePaths
+    appyaml = appinfo.LoadSingleAppInfo(appinfo_file)
+  File "/home/student/google-cloud-cli-418.0.0-linux-x86_64/google-cloud-sdk/platform/google_appengine/google/appengine/api/appinfo.py", line 2752, in LoadSingleAppInfo
+    listener.Parse(app_info)
+  File "/home/student/google-cloud-cli-418.0.0-linux-x86_64/google-cloud-sdk/platform/google_appengine/google/appengine/api/yaml_listener.py", line 240, in Parse
+    stream, loader_class, version=version, **loader_args))
+  File "/home/student/google-cloud-cli-418.0.0-linux-x86_64/google-cloud-sdk/platform/google_appengine/google/appengine/api/yaml_listener.py", line 178, in _HandleEvents
+    raise yaml_errors.EventError(e, event_object)
+google.appengine.api.yaml_errors.EventError: Unknown url handler type.
+<URLMap 
+    secure=default 
+    static_files=None 
+    application_readable=None 
+    auth_fail_action=redirect 
+    require_matching_file=None 
+    static_dir=None 
+    redirect_http_response_code=None 
+    http_headers=None 
+    url=/ 
+    script=None 
+    upload=None 
+    api_endpoint=None 
+    expiration=None 
+    position=None 
+    login=optional 
+    mime_type=None
+    >
+  in "/home/student/assign7/app.yaml", line 8, column 1
+student@student-OptiPlex-3020:/home$ python3 /home/student/google-cloud-cli-418.0.0-linux-x86_64/google-cloud-sdk/bin/dev_appserver.py "/home/student/assign7" 
+INFO     2023-05-11 05:18:56,468 devappserver2.py:317] Skipping SDK update check.
+WARNING  2023-05-11 05:18:56,855 simple_search_stub.py:1196] Could not read search indexes from /tmp/appengine.assign7.student/search_indexes
+INFO     2023-05-11 05:18:56,856 <string>:384] Starting API server at: http://localhost:35475
+INFO     2023-05-11 05:18:56,860 instance_factory.py:155] Detected python version "Python 3.8.10
+" for runtime "python38" at "python3".
+INFO     2023-05-11 05:18:58,900 instance_factory.py:312] Using pip to install dependency libraries; pip stdout is redirected to /tmp/tmpVLT4L8
+INFO     2023-05-11 05:18:58,904 instance_factory.py:334] Running /tmp/tmpLXXX4f/bin/pip install --upgrade pip
+                                                
+INFO     2023-05-11 05:19:02,982 instance_factory.py:334] Running /tmp/tmpLXXX4f/bin/pip install -r /tmp/tmpc86Ek0
+                                                                                Requirement already satisfied: setuptools>=3.0 in /tmp/tmpLXXX4f/lib/python3.8/s                                                                                                                                                 
+INFO     2023-05-11 05:19:05,768 stub_util.py:360] Applying all pending transactions and saving the datastore
+INFO     2023-05-11 05:19:05,769 stub_util.py:363] Saving search indexes
+Traceback (most recent call last):
+  File "/home/student/google-cloud-cli-418.0.0-linux-x86_64/google-cloud-sdk/platform/google_appengine/dev_appserver.py", line 109, in <module>
+    _run_file(__file__, globals())
+  File "/home/student/google-cloud-cli-418.0.0-linux-x86_64/google-cloud-sdk/platform/google_appengine/dev_appserver.py", line 103, in _run_file
+    _execfile(_PATHS.script_file(script_name), globals_)
+  File "/home/student/google-cloud-cli-418.0.0-linux-x86_64/google-cloud-sdk/platform/google_appengine/dev_appserver.py", line 83, in _execfile
+    execfile(fn, scope)
+  File "/home/student/google-cloud-cli-418.0.0-linux-x86_64/google-cloud-sdk/platform/google_appengine/google/appengine/tools/devappserver2/devappserver2.py", line 645, in <module>
+    main()
+  File "/home/student/google-cloud-cli-418.0.0-linux-x86_64/google-cloud-sdk/platform/google_appengine/google/appengine/tools/devappserver2/devappserver2.py", line 633, in main
+    dev_server.start(options)
+  File "/home/student/google-cloud-cli-418.0.0-linux-x86_64/google-cloud-sdk/platform/google_appengine/google/appengine/tools/devappserver2/devappserver2.py", line 401, in start
+    options.api_host, apiserver.port, wsgi_request_info_)
+  File "/home/student/google-cloud-cli-418.0.0-linux-x86_64/google-cloud-sdk/platform/google_appengine/google/appengine/tools/devappserver2/dispatcher.py", line 273, in start
+    _service.start()
+  File "/home/student/google-cloud-cli-418.0.0-linux-x86_64/google-cloud-sdk/platform/google_appengine/google/appengine/tools/devappserver2/module.py", line 1378, in start
+    self._balanced_module.start()
+  File "/home/student/google-cloud-cli-418.0.0-linux-x86_64/google-cloud-sdk/platform/google_appengine/google/appengine/tools/devappserver2/wsgi_server.py", line 445, in start
+    raise BindError('Unable to bind %s:%s' % self.bind_addr)
+google.appengine.tools.devappserver2.wsgi_server.BindError: Unable to bind localhost:8080
+student@student-OptiPlex-3020:/home$ python3 /home/student/google-cloud-cli-418.0.0-linux-x86_64/google-cloud-sdk/bin/dev_appserver.py "/home/student/assign7" 
+INFO     2023-05-11 05:19:26,421 devappserver2.py:317] Skipping SDK update check.
+INFO     2023-05-11 05:19:26,591 <string>:384] Starting API server at: http://localhost:46567
+INFO     2023-05-11 05:19:26,591 stub_util.py:360] Applying all pending transactions and saving the datastore
+INFO     2023-05-11 05:19:26,591 stub_util.py:363] Saving search indexes
+Traceback (most recent call last):
+  File "/home/student/google-cloud-cli-418.0.0-linux-x86_64/google-cloud-sdk/platform/google_appengine/dev_appserver.py", line 109, in <module>
+    _run_file(__file__, globals())
+  File "/home/student/google-cloud-cli-418.0.0-linux-x86_64/google-cloud-sdk/platform/google_appengine/dev_appserver.py", line 103, in _run_file
+    _execfile(_PATHS.script_file(script_name), globals_)
+  File "/home/student/google-cloud-cli-418.0.0-linux-x86_64/google-cloud-sdk/platform/google_appengine/dev_appserver.py", line 83, in _execfile
+    execfile(fn, scope)
+  File "/home/student/google-cloud-cli-418.0.0-linux-x86_64/google-cloud-sdk/platform/google_appengine/google/appengine/tools/devappserver2/devappserver2.py", line 645, in <module>
+    main()
+  File "/home/student/google-cloud-cli-418.0.0-linux-x86_64/google-cloud-sdk/platform/google_appengine/google/appengine/tools/devappserver2/devappserver2.py", line 633, in main
+    dev_server.start(options)
+  File "/home/student/google-cloud-cli-418.0.0-linux-x86_64/google-cloud-sdk/platform/google_appengine/google/appengine/tools/devappserver2/devappserver2.py", line 401, in start
+    options.api_host, apiserver.port, wsgi_request_info_)
+  File "/home/student/google-cloud-cli-418.0.0-linux-x86_64/google-cloud-sdk/platform/google_appengine/google/appengine/tools/devappserver2/dispatcher.py", line 272, in start
+    ssl_port)
+  File "/home/student/google-cloud-cli-418.0.0-linux-x86_64/google-cloud-sdk/platform/google_appengine/google/appengine/tools/devappserver2/dispatcher.py", line 409, in _create_module
+    ssl_port=ssl_port)
+  File "/home/student/google-cloud-cli-418.0.0-linux-x86_64/google-cloud-sdk/platform/google_appengine/google/appengine/tools/devappserver2/module.py", line 1356, in __init__
+    super(AutoScalingModule, self).__init__(**kwargs)
+  File "/home/student/google-cloud-cli-418.0.0-linux-x86_64/google-cloud-sdk/platform/google_appengine/google/appengine/tools/devappserver2/module.py", line 615, in __init__
+    self._module_configuration)
+  File "/home/student/google-cloud-cli-418.0.0-linux-x86_64/google-cloud-sdk/platform/google_appengine/google/appengine/tools/devappserver2/module.py", line 237, in _create_instance_factory
+    sorted(repr(k) for k in runtime_factories.FACTORIES))))
+RuntimeError: Unknown runtime 'python3'; supported runtimes are 'custom', 'go', 'go111', 'go112', 'go113', 'go114', 'go115', 'java', 'java7', 'java8', 'php55', 'php72', 'php81', 'python', 'python-compat', 'python27', 'python310', 'python37', 'python38', 'python39'.
+student@student-OptiPlex-3020:/home$ python3 /home/student/google-cloud-cli-418.0.0-linux-x86_64/google-cloud-sdk/bin/dev_appserver.py "/home/student/assign7" 
+INFO     2023-05-11 05:19:40,966 devappserver2.py:317] Skipping SDK update check.
+INFO     2023-05-11 05:19:41,137 <string>:384] Starting API server at: http://localhost:35263
+INFO     2023-05-11 05:19:41,142 instance_factory.py:155] Detected python version "Python 3.8.10
+" for runtime "python38" at "python3".
+INFO     2023-05-11 05:19:42,705 instance_factory.py:312] Using pip to install dependency libraries; pip stdout is redirected to /tmp/tmpR665PE
+INFO     2023-05-11 05:19:42,710 instance_factory.py:334] Running /tmp/tmpthpvfc/bin/pip install --upgrade pip
+                                                 
+INFO     2023-05-11 05:19:45,630 instance_factory.py:334] Running /tmp/tmpthpvfc/bin/pip install -r /tmp/tmpKB7vJ0
+Requirement already satisfied: setuptools>=3.0 in /tmp/tmpthpvfc/lib/python3.8/s                                                                                                                                                 
+INFO     2023-05-11 05:19:46,905 stub_util.py:360] Applying all pending transactions and saving the datastore
+INFO     2023-05-11 05:19:46,905 stub_util.py:363] Saving search indexes
+Traceback (most recent call last):
+  File "/home/student/google-cloud-cli-418.0.0-linux-x86_64/google-cloud-sdk/platform/google_appengine/dev_appserver.py", line 109, in <module>
+    _run_file(__file__, globals())
+  File "/home/student/google-cloud-cli-418.0.0-linux-x86_64/google-cloud-sdk/platform/google_appengine/dev_appserver.py", line 103, in _run_file
+    _execfile(_PATHS.script_file(script_name), globals_)
+  File "/home/student/google-cloud-cli-418.0.0-linux-x86_64/google-cloud-sdk/platform/google_appengine/dev_appserver.py", line 83, in _execfile
+    execfile(fn, scope)
+  File "/home/student/google-cloud-cli-418.0.0-linux-x86_64/google-cloud-sdk/platform/google_appengine/google/appengine/tools/devappserver2/devappserver2.py", line 645, in <module>
+    main()
+  File "/home/student/google-cloud-cli-418.0.0-linux-x86_64/google-cloud-sdk/platform/google_appengine/google/appengine/tools/devappserver2/devappserver2.py", line 633, in main
+    dev_server.start(options)
+  File "/home/student/google-cloud-cli-418.0.0-linux-x86_64/google-cloud-sdk/platform/google_appengine/google/appengine/tools/devappserver2/devappserver2.py", line 401, in start
+    options.api_host, apiserver.port, wsgi_request_info_)
+  File "/home/student/google-cloud-cli-418.0.0-linux-x86_64/google-cloud-sdk/platform/google_appengine/google/appengine/tools/devappserver2/dispatcher.py", line 273, in start
+    _service.start()
+  File "/home/student/google-cloud-cli-418.0.0-linux-x86_64/google-cloud-sdk/platform/google_appengine/google/appengine/tools/devappserver2/module.py", line 1378, in start
+    self._balanced_module.start()
+  File "/home/student/google-cloud-cli-418.0.0-linux-x86_64/google-cloud-sdk/platform/google_appengine/google/appengine/tools/devappserver2/wsgi_server.py", line 445, in start
+    raise BindError('Unable to bind %s:%s' % self.bind_addr)
+google.appengine.tools.devappserver2.wsgi_server.BindError: Unable to bind localhost:8080
+student@student-OptiPlex-3020:/home$ python3 /home/student/google-cloud-cli-418.0.0-linux-x86_64/google-cloud-sdk/bin/dev_appserver.py --admin_port=9000 "/home/student/assign7" 
+INFO     2023-05-11 05:20:57,315 devappserver2.py:317] Skipping SDK update check.
+INFO     2023-05-11 05:20:57,493 <string>:384] Starting API server at: http://localhost:42231
+INFO     2023-05-11 05:20:57,499 instance_factory.py:155] Detected python version "Python 3.8.10
+" for runtime "python38" at "python3".
+INFO     2023-05-11 05:20:59,202 instance_factory.py:312] Using pip to install dependency libraries; pip stdout is redirected to /tmp/tmpy9wup3
+INFO     2023-05-11 05:20:59,207 instance_factory.py:334] Running /tmp/tmpPEGoRv/bin/pip install --upgrade pip
+                                                 
+INFO     2023-05-11 05:21:01,900 instance_factory.py:334] Running /tmp/tmpPEGoRv/bin/pip install -r /tmp/tmpYIvbxo
+Requirement already satisfied: setuptools>=3.0 in /tmp/tmpPEGoRv/lib/python3.8/s                                                                                                                                                 
+INFO     2023-05-11 05:21:02,974 stub_util.py:360] Applying all pending transactions and saving the datastore
+INFO     2023-05-11 05:21:02,974 stub_util.py:363] Saving search indexes
+Traceback (most recent call last):
+  File "/home/student/google-cloud-cli-418.0.0-linux-x86_64/google-cloud-sdk/platform/google_appengine/dev_appserver.py", line 109, in <module>
+    _run_file(__file__, globals())
+  File "/home/student/google-cloud-cli-418.0.0-linux-x86_64/google-cloud-sdk/platform/google_appengine/dev_appserver.py", line 103, in _run_file
+    _execfile(_PATHS.script_file(script_name), globals_)
+  File "/home/student/google-cloud-cli-418.0.0-linux-x86_64/google-cloud-sdk/platform/google_appengine/dev_appserver.py", line 83, in _execfile
+    execfile(fn, scope)
+  File "/home/student/google-cloud-cli-418.0.0-linux-x86_64/google-cloud-sdk/platform/google_appengine/google/appengine/tools/devappserver2/devappserver2.py", line 645, in <module>
+    main()
+  File "/home/student/google-cloud-cli-418.0.0-linux-x86_64/google-cloud-sdk/platform/google_appengine/google/appengine/tools/devappserver2/devappserver2.py", line 633, in main
+    dev_server.start(options)
+  File "/home/student/google-cloud-cli-418.0.0-linux-x86_64/google-cloud-sdk/platform/google_appengine/google/appengine/tools/devappserver2/devappserver2.py", line 401, in start
+    options.api_host, apiserver.port, wsgi_request_info_)
+  File "/home/student/google-cloud-cli-418.0.0-linux-x86_64/google-cloud-sdk/platform/google_appengine/google/appengine/tools/devappserver2/dispatcher.py", line 273, in start
+    _service.start()
+  File "/home/student/google-cloud-cli-418.0.0-linux-x86_64/google-cloud-sdk/platform/google_appengine/google/appengine/tools/devappserver2/module.py", line 1378, in start
+    self._balanced_module.start()
+  File "/home/student/google-cloud-cli-418.0.0-linux-x86_64/google-cloud-sdk/platform/google_appengine/google/appengine/tools/devappserver2/wsgi_server.py", line 445, in start
+    raise BindError('Unable to bind %s:%s' % self.bind_addr)
+google.appengine.tools.devappserver2.wsgi_server.BindError: Unable to bind localhost:8080
+student@student-OptiPlex-3020:/home$ python3 /home/student/google-cloud-cli-418.0.0-linux-x86_64/google-cloud-sdk/bin/dev_appserver.py --admin_port=9000 --port =9999 "/home/student/assign7" 
+usage: dev_appserver.py [-h] [-A APP_ID] [--host HOST] [--port PORT]
+                        [--specified_service_ports SPECIFIED_SERVICE_PORTS]
+                        [--admin_host ADMIN_HOST] [--admin_port ADMIN_PORT]
+                        [--auth_domain AUTH_DOMAIN] [--storage_path PATH]
+                        [--log_level {debug,info,warning,critical,error}]
+                        [--max_module_instances MAX_MODULE_INSTANCES]
+                        [--use_mtime_file_watcher [USE_MTIME_FILE_WATCHER]]
+                        [--threadsafe_override THREADSAFE_OVERRIDE]
+                        [--addn_host ADDN_HOST]
+                        [--enable_host_checking [ENABLE_HOST_CHECKING]]
+                        [--enable_console [ENABLE_CONSOLE]]
+                        [--ssl_certificate_path SSL_CERTIFICATE_PATH]
+                        [--ssl_certificate_key_path SSL_CERTIFICATE_KEY_PATH]
+                        [--php_executable_path PATH] [--php_library_path PATH]
+                        [--php_remote_debugging [PHP_REMOTE_DEBUGGING]]
+                        [--php_gae_extension_path PATH]
+                        [--php_xdebug_extension_path PATH]
+                        [--php_composer_path PATH]
+                        [--appidentity_email_address APPIDENTITY_EMAIL_ADDRESS]
+                        [--appidentity_private_key_path APPIDENTITY_PRIVATE_KEY_PATH]
+                        [--python_startup_script PYTHON_STARTUP_SCRIPT]
+                        [--python_startup_args PYTHON_STARTUP_ARGS]
+                        [--python27_executable_path PYTHON27_EXECUTABLE_PATH]
+                        [--runtime_python_path RUNTIME_PYTHON_PATH]
+                        [--jvm_flag JVM_FLAG] [--go_work_dir GO_WORK_DIR]
+                        [--enable_watching_go_path [ENABLE_WATCHING_GO_PATH]]
+                        [--go_debugging [GO_DEBUGGING]]
+                        [--custom_entrypoint CUSTOM_ENTRYPOINT]
+                        [--runtime RUNTIME] [--blobstore_path BLOBSTORE_PATH]
+                        [--mysql_host MYSQL_HOST] [--mysql_port MYSQL_PORT]
+                        [--mysql_user MYSQL_USER]
+                        [--mysql_password MYSQL_PASSWORD]
+                        [--mysql_socket MYSQL_SOCKET]
+                        [--datastore_path DATASTORE_PATH]
+                        [--clear_datastore [CLEAR_DATASTORE]]
+                        [--datastore_consistency_policy {consistent,random,time}]
+                        [--require_indexes [REQUIRE_INDEXES]]
+                        [--auto_id_policy {sequential,scattered}]
+                        [--support_datastore_emulator [SUPPORT_DATASTORE_EMULATOR]]
+                        [--running_datastore_emulator_host RUNNING_DATASTORE_EMULATOR_HOST]
+                        [--datastore_emulator_port DATASTORE_EMULATOR_PORT]
+                        [--datastore_emulator_cmd DATASTORE_EMULATOR_CMD]
+                        [--logs_path LOGS_PATH]
+                        [--show_mail_body [SHOW_MAIL_BODY]]
+                        [--enable_sendmail [ENABLE_SENDMAIL]]
+                        [--smtp_host SMTP_HOST] [--smtp_port SMTP_PORT]
+                        [--smtp_user SMTP_USER]
+                        [--smtp_password SMTP_PASSWORD]
+                        [--smtp_allow_tls [SMTP_ALLOW_TLS]]
+                        [--search_indexes_path SEARCH_INDEXES_PATH]
+                        [--clear_search_indexes [CLEAR_SEARCH_INDEXES]]
+                        [--enable_task_running [ENABLE_TASK_RUNNING]]
+                        [--allow_skipped_files [ALLOW_SKIPPED_FILES]]
+                        [--watcher_ignore_re WATCHER_IGNORE_RE]
+                        [--api_host API_HOST] [--api_port API_PORT]
+                        [--grpc_api_port GRPC_API_PORT]
+                        [--automatic_restart [AUTOMATIC_RESTART]]
+                        [--dev_appserver_log_level {debug,info,warning,critical,error}]
+                        [--skip_sdk_update_check [SKIP_SDK_UPDATE_CHECK]]
+                        [--default_gcs_bucket_name DEFAULT_GCS_BUCKET_NAME]
+                        [--env_var ENV_VARIABLES]
+                        yaml_path [yaml_path ...]
+dev_appserver.py: error: argument --port: Invalid port: '=9999'
+student@student-OptiPlex-3020:/home$ python3 /home/student/google-cloud-cli-418.0.0-linux-x86_64/google-cloud-sdk/bin/dev_appserver.py --admin_port=9000 --port = 9999 "/home/student/assign7" 
+usage: dev_appserver.py [-h] [-A APP_ID] [--host HOST] [--port PORT]
+                        [--specified_service_ports SPECIFIED_SERVICE_PORTS]
+                        [--admin_host ADMIN_HOST] [--admin_port ADMIN_PORT]
+                        [--auth_domain AUTH_DOMAIN] [--storage_path PATH]
+                        [--log_level {debug,info,warning,critical,error}]
+                        [--max_module_instances MAX_MODULE_INSTANCES]
+                        [--use_mtime_file_watcher [USE_MTIME_FILE_WATCHER]]
+                        [--threadsafe_override THREADSAFE_OVERRIDE]
+                        [--addn_host ADDN_HOST]
+                        [--enable_host_checking [ENABLE_HOST_CHECKING]]
+                        [--enable_console [ENABLE_CONSOLE]]
+                        [--ssl_certificate_path SSL_CERTIFICATE_PATH]
+                        [--ssl_certificate_key_path SSL_CERTIFICATE_KEY_PATH]
+                        [--php_executable_path PATH] [--php_library_path PATH]
+                        [--php_remote_debugging [PHP_REMOTE_DEBUGGING]]
+                        [--php_gae_extension_path PATH]
+                        [--php_xdebug_extension_path PATH]
+                        [--php_composer_path PATH]
+                        [--appidentity_email_address APPIDENTITY_EMAIL_ADDRESS]
+                        [--appidentity_private_key_path APPIDENTITY_PRIVATE_KEY_PATH]
+                        [--python_startup_script PYTHON_STARTUP_SCRIPT]
+                        [--python_startup_args PYTHON_STARTUP_ARGS]
+                        [--python27_executable_path PYTHON27_EXECUTABLE_PATH]
+                        [--runtime_python_path RUNTIME_PYTHON_PATH]
+                        [--jvm_flag JVM_FLAG] [--go_work_dir GO_WORK_DIR]
+                        [--enable_watching_go_path [ENABLE_WATCHING_GO_PATH]]
+                        [--go_debugging [GO_DEBUGGING]]
+                        [--custom_entrypoint CUSTOM_ENTRYPOINT]
+                        [--runtime RUNTIME] [--blobstore_path BLOBSTORE_PATH]
+                        [--mysql_host MYSQL_HOST] [--mysql_port MYSQL_PORT]
+                        [--mysql_user MYSQL_USER]
+                        [--mysql_password MYSQL_PASSWORD]
+                        [--mysql_socket MYSQL_SOCKET]
+                        [--datastore_path DATASTORE_PATH]
+                        [--clear_datastore [CLEAR_DATASTORE]]
+                        [--datastore_consistency_policy {consistent,random,time}]
+                        [--require_indexes [REQUIRE_INDEXES]]
+                        [--auto_id_policy {sequential,scattered}]
+                        [--support_datastore_emulator [SUPPORT_DATASTORE_EMULATOR]]
+                        [--running_datastore_emulator_host RUNNING_DATASTORE_EMULATOR_HOST]
+                        [--datastore_emulator_port DATASTORE_EMULATOR_PORT]
+                        [--datastore_emulator_cmd DATASTORE_EMULATOR_CMD]
+                        [--logs_path LOGS_PATH]
+                        [--show_mail_body [SHOW_MAIL_BODY]]
+                        [--enable_sendmail [ENABLE_SENDMAIL]]
+                        [--smtp_host SMTP_HOST] [--smtp_port SMTP_PORT]
+                        [--smtp_user SMTP_USER]
+                        [--smtp_password SMTP_PASSWORD]
+                        [--smtp_allow_tls [SMTP_ALLOW_TLS]]
+                        [--search_indexes_path SEARCH_INDEXES_PATH]
+                        [--clear_search_indexes [CLEAR_SEARCH_INDEXES]]
+                        [--enable_task_running [ENABLE_TASK_RUNNING]]
+                        [--allow_skipped_files [ALLOW_SKIPPED_FILES]]
+                        [--watcher_ignore_re WATCHER_IGNORE_RE]
+                        [--api_host API_HOST] [--api_port API_PORT]
+                        [--grpc_api_port GRPC_API_PORT]
+                        [--automatic_restart [AUTOMATIC_RESTART]]
+                        [--dev_appserver_log_level {debug,info,warning,critical,error}]
+                        [--skip_sdk_update_check [SKIP_SDK_UPDATE_CHECK]]
+                        [--default_gcs_bucket_name DEFAULT_GCS_BUCKET_NAME]
+                        [--env_var ENV_VARIABLES]
+                        yaml_path [yaml_path ...]
+dev_appserver.py: error: argument --port: Invalid port: '='
+student@student-OptiPlex-3020:/home$ python3 /home/student/google-cloud-cli-418.0.0-linux-x86_64/google-cloud-sdk/bin/dev_appserver.py --admin_port=9000 --port= 9999 "/home/student/assign7" 
+usage: dev_appserver.py [-h] [-A APP_ID] [--host HOST] [--port PORT]
+                        [--specified_service_ports SPECIFIED_SERVICE_PORTS]
+                        [--admin_host ADMIN_HOST] [--admin_port ADMIN_PORT]
+                        [--auth_domain AUTH_DOMAIN] [--storage_path PATH]
+                        [--log_level {debug,info,warning,critical,error}]
+                        [--max_module_instances MAX_MODULE_INSTANCES]
+                        [--use_mtime_file_watcher [USE_MTIME_FILE_WATCHER]]
+                        [--threadsafe_override THREADSAFE_OVERRIDE]
+                        [--addn_host ADDN_HOST]
+                        [--enable_host_checking [ENABLE_HOST_CHECKING]]
+                        [--enable_console [ENABLE_CONSOLE]]
+                        [--ssl_certificate_path SSL_CERTIFICATE_PATH]
+                        [--ssl_certificate_key_path SSL_CERTIFICATE_KEY_PATH]
+                        [--php_executable_path PATH] [--php_library_path PATH]
+                        [--php_remote_debugging [PHP_REMOTE_DEBUGGING]]
+                        [--php_gae_extension_path PATH]
+                        [--php_xdebug_extension_path PATH]
+                        [--php_composer_path PATH]
+                        [--appidentity_email_address APPIDENTITY_EMAIL_ADDRESS]
+                        [--appidentity_private_key_path APPIDENTITY_PRIVATE_KEY_PATH]
+                        [--python_startup_script PYTHON_STARTUP_SCRIPT]
+                        [--python_startup_args PYTHON_STARTUP_ARGS]
+                        [--python27_executable_path PYTHON27_EXECUTABLE_PATH]
+                        [--runtime_python_path RUNTIME_PYTHON_PATH]
+                        [--jvm_flag JVM_FLAG] [--go_work_dir GO_WORK_DIR]
+                        [--enable_watching_go_path [ENABLE_WATCHING_GO_PATH]]
+                        [--go_debugging [GO_DEBUGGING]]
+                        [--custom_entrypoint CUSTOM_ENTRYPOINT]
+                        [--runtime RUNTIME] [--blobstore_path BLOBSTORE_PATH]
+                        [--mysql_host MYSQL_HOST] [--mysql_port MYSQL_PORT]
+                        [--mysql_user MYSQL_USER]
+                        [--mysql_password MYSQL_PASSWORD]
+                        [--mysql_socket MYSQL_SOCKET]
+                        [--datastore_path DATASTORE_PATH]
+                        [--clear_datastore [CLEAR_DATASTORE]]
+                        [--datastore_consistency_policy {consistent,random,time}]
+                        [--require_indexes [REQUIRE_INDEXES]]
+                        [--auto_id_policy {sequential,scattered}]
+                        [--support_datastore_emulator [SUPPORT_DATASTORE_EMULATOR]]
+                        [--running_datastore_emulator_host RUNNING_DATASTORE_EMULATOR_HOST]
+                        [--datastore_emulator_port DATASTORE_EMULATOR_PORT]
+                        [--datastore_emulator_cmd DATASTORE_EMULATOR_CMD]
+                        [--logs_path LOGS_PATH]
+                        [--show_mail_body [SHOW_MAIL_BODY]]
+                        [--enable_sendmail [ENABLE_SENDMAIL]]
+                        [--smtp_host SMTP_HOST] [--smtp_port SMTP_PORT]
+                        [--smtp_user SMTP_USER]
+                        [--smtp_password SMTP_PASSWORD]
+                        [--smtp_allow_tls [SMTP_ALLOW_TLS]]
+                        [--search_indexes_path SEARCH_INDEXES_PATH]
+                        [--clear_search_indexes [CLEAR_SEARCH_INDEXES]]
+                        [--enable_task_running [ENABLE_TASK_RUNNING]]
+                        [--allow_skipped_files [ALLOW_SKIPPED_FILES]]
+                        [--watcher_ignore_re WATCHER_IGNORE_RE]
+                        [--api_host API_HOST] [--api_port API_PORT]
+                        [--grpc_api_port GRPC_API_PORT]
+                        [--automatic_restart [AUTOMATIC_RESTART]]
+                        [--dev_appserver_log_level {debug,info,warning,critical,error}]
+                        [--skip_sdk_update_check [SKIP_SDK_UPDATE_CHECK]]
+                        [--default_gcs_bucket_name DEFAULT_GCS_BUCKET_NAME]
+                        [--env_var ENV_VARIABLES]
+                        yaml_path [yaml_path ...]
+dev_appserver.py: error: argument --port: Invalid port: ''
+student@student-OptiPlex-3020:/home$ python3 /home/student/google-cloud-cli-418.0.0-linux-x86_64/google-cloud-sdk/bin/dev_appserver.py --admin_port=9000 --port=9999 "/home/student/assign7" 
+INFO     2023-05-11 05:22:13,192 devappserver2.py:317] Skipping SDK update check.
+INFO     2023-05-11 05:22:13,361 <string>:384] Starting API server at: http://localhost:37975
+INFO     2023-05-11 05:22:13,366 instance_factory.py:155] Detected python version "Python 3.8.10
+" for runtime "python38" at "python3".
+INFO     2023-05-11 05:22:15,005 instance_factory.py:312] Using pip to install dependency libraries; pip stdout is redirected to /tmp/tmpnoYngv
+INFO     2023-05-11 05:22:15,010 instance_factory.py:334] Running /tmp/tmpQZ8hEz/bin/pip install --upgrade pip
+                                                 
+INFO     2023-05-11 05:22:17,602 instance_factory.py:334] Running /tmp/tmpQZ8hEz/bin/pip install -r /tmp/tmpIFoV7r
+Requirement already satisfied: setuptools>=3.0 in /tmp/tmpQZ8hEz/lib/python3.8/s                                                                                                                                                 
+INFO     2023-05-11 05:22:18,990 dispatcher.py:280] Starting module "default" running at: http://localhost:9999
+INFO     2023-05-11 05:22:18,991 admin_server.py:70] Starting admin server at: http://localhost:9000
+[2023-05-11 10:52:20 +0530] [20763] [INFO] Starting gunicorn 20.1.0
+[2023-05-11 10:52:20 +0530] [20763] [INFO] Listening at: http://0.0.0.0:39805 (20763)
+[2023-05-11 10:52:20 +0530] [20763] [INFO] Using worker: sync
+[2023-05-11 10:52:20 +0530] [20765] [INFO] Booting worker with pid: 20765
+[2023-05-11 10:52:20 +0530] [20765] [ERROR] Exception in worker process
+Traceback (most recent call last):
+  File "/tmp/tmpQZ8hEz/lib/python3.8/site-packages/gunicorn/arbiter.py", line 589, in spawn_worker
+    worker.init_process()
+  File "/tmp/tmpQZ8hEz/lib/python3.8/site-packages/gunicorn/workers/base.py", line 134, in init_process
+    self.load_wsgi()
+  File "/tmp/tmpQZ8hEz/lib/python3.8/site-packages/gunicorn/workers/base.py", line 146, in load_wsgi
+    self.wsgi = self.app.wsgi()
+  File "/tmp/tmpQZ8hEz/lib/python3.8/site-packages/gunicorn/app/base.py", line 67, in wsgi
+    self.callable = self.load()
+  File "/tmp/tmpQZ8hEz/lib/python3.8/site-packages/gunicorn/app/wsgiapp.py", line 58, in load
+    return self.load_wsgiapp()
+  File "/tmp/tmpQZ8hEz/lib/python3.8/site-packages/gunicorn/app/wsgiapp.py", line 48, in load_wsgiapp
+    return util.import_app(self.app_uri)
+  File "/tmp/tmpQZ8hEz/lib/python3.8/site-packages/gunicorn/util.py", line 359, in import_app
+    mod = importlib.import_module(module)
+  File "/usr/lib/python3.8/importlib/__init__.py", line 127, in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+  File "<frozen importlib._bootstrap>", line 1014, in _gcd_import
+  File "<frozen importlib._bootstrap>", line 991, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 973, in _find_and_load_unlocked
+ModuleNotFoundError: No module named 'main'
+[2023-05-11 10:52:20 +0530] [20765] [INFO] Worker exiting (pid: 20765)
+[2023-05-11 10:52:20 +0530] [20763] [INFO] Shutting down: Master
+[2023-05-11 10:52:20 +0530] [20763] [INFO] Reason: Worker failed to boot.
+ERROR    2023-05-11 05:22:21,026 instance.py:284] Cannot connect to the instance on localhost:39805
+^A^A
+
+
