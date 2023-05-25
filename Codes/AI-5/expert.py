@@ -1,45 +1,50 @@
-# Define the rules
-def rule1(symptoms):
-    if 'fever' in symptoms and 'cough' in symptoms and 'fatigue' in symptoms:
-        return 'You may have the flu.'
-    return None
+# Define the knowledge base
+knowledge_base = {
+    'fever': {
+        'headache': 'Flu',
+        'cough': 'Common Cold'
+    },
+    'cough': {
+        'shortness of breath': 'Pneumonia',
+        'chest pain': 'Bronchitis'
+    },
+    'headache': {
+        'stiff neck': 'Meningitis',
+        'blurred vision': 'Migraine'
+    },
+    'fatigue': {
+        'body aches': 'Influenza',
+        'joint pain': 'Arthritis'
+    },
+    'abdominal pain': {
+        'nausea': 'Appendicitis',
+        'bloating': 'Irritable Bowel Syndrome'
+    },
+    # Add more symptoms and associated diseases
+}
 
-def rule2(symptoms):
-    if 'fever' in symptoms and 'rash' in symptoms and 'headache' in symptoms:
-        return 'You may have meningitis.'
-    return None
+# Define the inference engine
+def diagnose_symptoms(symptoms):
+    for symptom, associated_symptoms in knowledge_base.items():
+        if symptom in symptoms:
+            for associated_symptom, condition in associated_symptoms.items():
+                if associated_symptom in symptoms:
+                    return condition
+    return "Unknown"
 
-def rule3(symptoms):
-    if 'pain' in symptoms and 'swelling' in symptoms and 'bruising' in symptoms:
-        return 'You may have a fracture.'
-    return None
+# Chatbot loop
+print("Chatbot: Hello! I am a medical chatbot. Please describe your symptoms one by one, or enter 'exit' to quit.")
 
-def rule4(symptoms):
-    if 'abdominal pain' in symptoms and 'diarrhea' in symptoms and 'nausea' in symptoms:
-        return 'You may have food poisoning.'
-    return None
+user_symptoms = []
+while True:
+    symptom = input("You: ").strip().lower()
 
-def rule5(symptoms):
-    if 'shortness of breath' in symptoms and 'chest pain' in symptoms and 'dizziness' in symptoms:
-        return 'You may be having a heart attack. Please seek medical attention immediately.'
-    return None
+    if symptom == 'exit':
+        print("Chatbot: Goodbye!")
+        break
 
-# Define the expert system
-def diagnose(symptoms):
-    rules = [rule1, rule2, rule3, rule4, rule5]
-    results = []
-    for rule in rules:
-        result = rule(symptoms)
-        if result:
-            results.append(result)
-    if len(results) == 0:
-        return 'Sorry, we could not diagnose your condition.'
-    elif len(results) == 1:
-        return results[0]
-    else:
-        return 'You may have multiple conditions: ' + ', '.join(results)
+    user_symptoms.append(symptom)
 
-# Test the expert system
-symptoms = ['fever', 'rash', 'headache']
-result = diagnose(symptoms)
-print(result) # Output: You may have the flu.
+    diagnosis = diagnose_symptoms(user_symptoms)
+    print("Chatbot: Based on your symptoms, the possible diagnosis is:", diagnosis)
+    print()
