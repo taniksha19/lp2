@@ -71,11 +71,6 @@ int main() {
 
     return 0;
 }
-In this updated code, the user is prompted to enter the number of jobs. Then, a loop is used to input the details of each job, including the job ID, deadline, and profit.
-
-After the user input, the printJobScheduling function is called to determine and print the maximum profit sequence of jobs.
-
-Now, users can enter the number of jobs and their details interactively when running the program. The program will output the maximum profit sequence of jobs based on the provided input.
 
 
 
