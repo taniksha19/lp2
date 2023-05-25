@@ -1,0 +1,62 @@
+public class calculator {
+public integer firstNumber { get; set; }
+public integer secondNumber {get; set; }
+public double result {get; set; }
+public void Addition(){
+result = firstNumber + secondNumber;
+}
+public void Subtraction(){
+result = firstNumber - secondNumber;
+}
+public void Multiplication(){
+result = firstNumber * secondNumber;
+}
+public void Division(){
+result = firstNumber / secondNumber;
+}
+public void Log(){
+result=math.log(firstNumber); 
+    }
+public void Sin()
+{
+    result=math.sin(firstNumber);
+}  
+public void Cos()
+{
+    result=math.cos(firstNumber);
+} 
+public void Tan()
+{
+    result=math.tan(firstNumber);
+}    
+
+}
+
+
+
+<apex:page controller="calculator">
+<apex:sectionHeader title="Calculator" subtitle="Basic Calculator" />
+<apex:form >
+<apex:pageBlock title="Simple Calculator">
+<apex:pageBlockButtons location="bottom">
+<apex:commandButton value="Addition" action="{!Addition}" reRender="res"/>
+<apex:commandButton value="Subbtraction" action="{!Subtraction}" reRender="res" />
+<apex:commandButton value="Multiplication" action="{!Multiplication}" reRender="res"/>
+<apex:commandButton value="Division" action="{!Division}" reRender="res" />
+<apex:commandButton value="Log" action="{!Log}" reRender="res" /> 
+<apex:commandButton value="Sin" action="{!Sin}" reRender="res" />
+<apex:commandButton value="Cos" action="{!Cos}" reRender="res" />
+<apex:commandButton value="Tan" action="{!Tan}" reRender="res" />    
+</apex:pageBlockButtons>
+<apex:pageBlockSection title="Calculator">
+<apex:inputText label="Enter First Name" html-placeholder="First Number" value="{!firstNumber}"/>
+
+<apex:inputText label="Enter Second Name" html-placeholder="Second Number" value="{!secondNumber}"/>
+<apex:outputText label="Result" value="{!result}" id="res"/>
+</apex:pageBlockSection>
+
+</apex:pageBlock>
+</apex:form>
+</apex:page>
+
+
