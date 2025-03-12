@@ -1,2 +1,1 @@
-"# lp2" 
-"# lp2" 
+This repo was created for college practicals
